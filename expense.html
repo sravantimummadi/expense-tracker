@@ -42,5 +42,121 @@
                         <label for="amount">Amount</label>
                         <input type="number" id="amount" step="0.01" placeholder="0.00" required>
                     </div>
+                     <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select category</option>
+                            <option value="food">🍕 Food</option>
+                            <option value="transport">🚗 Transport</option>
+                            <option value="entertainment">🎬 Entertainment</option>
+                            <option value="shopping">🛍️ Shopping</option>
+                            <option value="bills">💡 Bills</option>
+                            <option value="health">🏥 Health</option>
+                            <option value="education">📚 Education</option>
+                            <option value="salary">💼 Salary</option>
+                            <option value="freelance">💻 Freelance</option>
+                            <option value="investment">📈 Investment</option>
+                            <option value="gift">🎁 Gift</option>
+                            <option value="other">📝 Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="type">Type</label>
+                        <select id="type" required>
+                            <option value="">Select type</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Add Transaction</button>
+            </form>
+        </div>
+        <div class="filter-section">
+            <h2>Filter Transactions</h2>
+            <div class="filter-controls">
+                <select id="filter-category">
+                    <option value="">All Categories</option>
+                    <option value="food">🍕 Food</option>
+                    <option value="transport">🚗 Transport</option>
+                    <option value="entertainment">🎬 Entertainment</option>
+                    <option value="shopping">🛍️ Shopping</option>
+                    <option value="bills">💡 Bills</option>
+                    <option value="health">🏥 Health</option>
+                    <option value="education">📚 Education</option>
+                    <option value="salary">💼 Salary</option>
+                    <option value="freelance">💻 Freelance</option>
+                    <option value="investment">📈 Investment</option>
+                    <option value="gift">🎁 Gift</option>
+                    <option value="other">📝 Other</option>
+                </select>
+                
+                <select id="filter-type">
+                    <option value="">All Types</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                
+                <input type="month" id="filter-month" placeholder="Filter by month">
+                
+                <button id="clear-filters" class="btn-secondary">Clear Filters</button>
+            </div>
+        </div>
+         <div class="transactions-section">
+            <div class="transactions-header">
+                <h2>Income Transactions</h2>
+                <button id="add-income" class="btn-primary">Add Income</button>
+            </div>
+            <div class="transactions-list" id="income-transactions-list">
+                <div class="no-transactions">
+                    <p>No income transactions yet. Add your first transaction above!</p>
+                </div>
+            </div>
+
+            <div class="transactions-header">
+                <h2>Expense Transactions</h2>
+                <button id="add-expense" class="btn-primary">Add Expense</button>
+            </div>
+            <div class="transactions-list" id="expense-transactions-list">
+                <div class="no-transactions">
+                    <p>No expense transactions yet. Add your first transaction above!</p>
+                </div>
+            </div>
+        </div>
+        <div class="category-section">
+            <h2>Spending by Category</h2>
+            <div class="category-summary" id="category-summary">
+                <p>Add some expenses to see category breakdown in ₹</p>
+            </div>
+        </div>
+        <div class="chart-section">
+            <h2>Monthly Income vs Expenses</h2>
+            <canvas id="income-expense-chart" width="400" height="200"></canvas>
+        </div>
+        <div style="text-align: center; padding: 2rem;">
+            <button id="clear-all" class="btn-danger">Clear All Transactions</button>
+        </div>
+        <div id="confirmation-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Are you sure?</h3>
+                <p>Do you really want to clear all transactions? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button id="confirm-clear" class="btn-primary">Yes
+                        
+                    </button>
+                    <button id="cancel-clear" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
