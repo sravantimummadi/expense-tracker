@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("expense.jpg");
+    background-color: linear-gradient(to right, #133038, #0072ff);
     background-size: cover;
     min-height: 100vh;
     color: #333;
